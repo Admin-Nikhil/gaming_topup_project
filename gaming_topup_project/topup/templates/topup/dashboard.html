@@ -1,0 +1,16 @@
+<h2>Top 5 Most Purchased Top-Up Products</h2>
+<ul>
+  {% for product in top_products %}
+    <li>{{ product.product__name }} - {{ product.purchase_count }} purchases</li>
+  {% endfor %}
+</ul>
+
+<h2>Daily Revenue (Last 7 Days)</h2>
+<ul>
+  {% for entry in daily_revenue %}
+    <li>{{ entry.created_at__date }}: ₹{{ entry.total }}</li>
+  {% endfor %}
+</ul>
+
+<h2>Failed Payments This Month</h2>
+<p>{{ failed_count }}</p>
